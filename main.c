@@ -25,15 +25,6 @@ int lireEntier() {
     return valeur;
 }
 
-float lireFlottant() {
-    float valeur;
-    while (scanf("%f", &valeur) != 1) {
-        printf("Entree invalide. Reessayez : ");
-        while (getchar() != '\n');
-    }
-    return valeur;
-}
-
 int rechercherCompte(int numeroCompte) {
     for (int i = 0; i < nombreComptes; i++) {
         if (comptes[i].numeroCompte == numeroCompte) return i;
@@ -121,7 +112,7 @@ void retirerArgent() {
         printf("Compte introuvable.\n");
         return;
     }
-    printf("Montant à retirer : ");
+    printf("Montant Ã  retirer : ");
     float montant = lireFlottant();
     if (montant <= 0 || comptes[index].solde < montant) {
         printf("Montant invalide ou fonds insuffisants.\n");
@@ -148,7 +139,7 @@ void transfertArgent() {
         return;
     }
 
-    printf("Montant à transferer : ");
+    printf("Montant Ã  transferer : ");
     float montant = lireFlottant();
     if (montant <= 0 || comptes[indexSource].solde < montant) {
         printf("Montant invalide ou fonds insuffisants.\n");
